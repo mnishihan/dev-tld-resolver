@@ -4,7 +4,7 @@ Simple top level domain (NSSwitch hosts) resolver for linux based development En
 
 # Project status
 
-This project is not ready use, but not released yet with usage documentation. Please check back soon.
+This project is ready to use, but not released yet with usage documentation. Please check back soon.
 
 
 # Credits
