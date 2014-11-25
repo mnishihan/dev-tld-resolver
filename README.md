@@ -10,9 +10,9 @@ This tool is developed in a Ubuntu 12.04 system & tested in later vesrions of Ub
 
 ## Ubuntu
 
-- Make sure you have "build-essentials" & "git" packages installed. You can install these using following command
+- Make sure you have "build-essential" & "git" packages installed. You can install these using following command
 ```bash
-(sudo) apt-get install build-essentials git
+sudo apt-get install build-essentials git
 ```
 - Clone this repository somewhere in your hard drive
 ```bash
@@ -21,7 +21,7 @@ git clone https://github.com/mnishihan/dev-tld-resolver.git
 -  Run following command to build & install the tool
 ```
 cd dev-tld-resolver && make
-(sudo) make install
+sudo make install
 ```
 
 > It's very important that you run the ```make install``` command as **root** or using **sudo**, otherwise installation will fail.
