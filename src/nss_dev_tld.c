@@ -6,6 +6,44 @@
 #include <resolv.h>
 #include <arpa/inet.h>
 
+// declarations
+
+void dev_tld_fill_hostent(const char *name,
+                  int af,
+                  struct hostent *result);
+
+enum nss_status
+_nss_dev_tld_gethostbyname2_r(const char *name,
+                           int af,
+                           struct hostent *result,
+                           char *buffer,
+                           size_t buflen,
+                           int *errnop,
+                           int *h_errnop);
+
+
+enum nss_status
+_nss_dev_tld_gethostbyname_r(const char *name,
+                          struct hostent *result,
+                          char *buffer,
+                          size_t buflen,
+                          int *errnop,
+                          int *h_errnop);
+
+
+enum nss_status
+_nss_dev_tld_gethostbyaddr_r(const void *addr,
+                         int len,
+                         int af,
+                         struct hostent *result,
+                         char *buffer,
+                         size_t buflen,
+                         int *errnop,
+                         int *h_errnop);
+
+
+// definitions
+
 void
 dev_tld_fill_hostent(const char *name,
                   int af,
@@ -100,11 +138,11 @@ _nss_dev_tld_gethostbyname_r(const char *name,
                           int *errnop,
                           int *h_errnop)
 {
-    return _nss_devtld_gethostbyname2_r(name, AF_INET, result, buffer, buflen, errnop, h_errnop);
+    return _nss_dev_tld_gethostbyname2_r(name, AF_INET, result, buffer, buflen, errnop, h_errnop);
 }
 
 enum nss_status
-_nss_gns_gethostbyaddr_r(const void *addr,
+_nss_dev_tld_gethostbyaddr_r(const void *addr,
                          int len,
                          int af,
                          struct hostent *result,
